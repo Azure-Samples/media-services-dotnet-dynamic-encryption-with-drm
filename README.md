@@ -18,7 +18,7 @@ To run this sample you will need:
 - An Internet connection
 - An Azure subscription
 
-This sample demonstrates funtionality that was introduced in Azure Media Services SDK for .Net -Version 3.5.2.  The following Nuget package command was used to install the package:
+This sample demonstrates functionality that was introduced in Azure Media Services SDK for .Net -Version 3.5.2 (specifically, the ability to define a Widevine license template and request a Widevine license from Azure Media Services).  The following Nuget package command was used to install the package:
 	
 	PM> Install-Package windowsazure.mediaservices -Version 3.5.2
 
