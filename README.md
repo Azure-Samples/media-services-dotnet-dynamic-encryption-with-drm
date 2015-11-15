@@ -10,15 +10,21 @@ The sample shows how to use Azure Media Services to dynamically encrypt your con
 
 For detailed information about the sample, see [Using PlayReady and/or Widevine Dynamic Common Encryption with .NET](http://azure.microsoft.com/documentation/articles/media-services-protect-with-drm/)
 
-## Running this sample
+## How To Run This Sample
 
-1. Use Nuget to install the latest Azure Media Services .NET SDK. The functionality shown in this example was introduced in Azure Media Services SDK for .Net -Version 3.5.2. 
-	
-	To install Windows Azure Media Services .NET SDK, run the following command in the [Package Manager Console](http://docs.nuget.org/docs/start-here/using-the-package-manager-console)
-	
-		PM> Install-Package windowsazure.mediaservices -Version 3.5.2
+To run this sample you will need:
 
-2. Add the appSettings section to the app.config file, and set the values for your Media Services account name and account key.
+- Visual Studio 2015
+- An Internet connection
+- An Azure subscription
+
+This sample demonstrates funtionality that was introduced in Azure Media Services SDK for .Net -Version 3.5.2.  The following Nuget package command was used to install the package:
+	
+	PM> Install-Package windowsazure.mediaservices -Version 3.5.2
+
+### Step 1:  Clone or download this repository.
+
+### Step 2: Update the appSettings section of the app.config file with values of your Azure Media Services account.
 
 		  <appSettings>
 		    <add key="MediaServicesAccountName" value="MediaServicesAccountName" />
@@ -26,6 +32,12 @@ For detailed information about the sample, see [Using PlayReady and/or Widevine 
 		    <add key="Issuer" value="http://testacs.com" />
 		    <add key="Audience" value="urn:test" />
 		  </appSettings>
+		  
+### Step 3: Get at least one streaming unit for the streaming endpoint from which you plan to delivery your content. For more information, see: [configure streaming endpoints](http://azure.microsoft.com/documentation/articles/media-services-dotnet-get-started/#configure-streaming-endpoint-using-the-portal)
+
+### Step 4:  Run the sample
+
+Clean the solution, rebuild the solution, and run it. 
 
 
 ## About the code
