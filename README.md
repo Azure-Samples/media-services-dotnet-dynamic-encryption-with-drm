@@ -14,7 +14,7 @@ For detailed information about the sample, see [Using PlayReady and/or Widevine 
 
 To run this sample you will need:
 
-- Visual Studio 2015
+- Visual Studio 2013 or 2015
 - An Internet connection
 - An Azure subscription
 
@@ -24,7 +24,9 @@ This sample demonstrates funtionality that was introduced in Azure Media Service
 
 ### Step 1:  Clone or download this repository.
 
-### Step 2: Update the appSettings section of the app.config file with values of your Azure Media Services account.
+### Step 2: Update the app.config file
+
+Update the appSettings section of the app.config file with values of your Azure Media Services account.
 
 		  <appSettings>
 		    <add key="MediaServicesAccountName" value="MediaServicesAccountName" />
@@ -33,7 +35,9 @@ This sample demonstrates funtionality that was introduced in Azure Media Service
 		    <add key="Audience" value="urn:test" />
 		  </appSettings>
 		  
-### Step 3: Get at least one streaming unit for the streaming endpoint from which you plan to delivery your content. For more information, see: [configure streaming endpoints](http://azure.microsoft.com/documentation/articles/media-services-dotnet-get-started/#configure-streaming-endpoint-using-the-portal)
+### Step 3: Get at least one streaming unit
+
+Get at least one streaming unit for the streaming endpoint from which you plan to delivery your content. For more information, see: [configure streaming endpoints](http://azure.microsoft.com/documentation/articles/media-services-dotnet-get-started/#configure-streaming-endpoint-using-the-portal)
 
 ### Step 4:  Run the sample
 
