@@ -195,7 +195,7 @@ namespace DynamicEncryptionWithDRM
             // Configure PlayReady and Widevine license templates.
             string PlayReadyLicenseTemplate = ConfigurePlayReadyLicenseTemplate();
 
-            string WidevyLicenseTemplate = ConfigureWidevineLicenseTemplate();
+            string WidevineLicenseTemplate = ConfigureWidevineLicenseTemplate();
 
             IContentKeyAuthorizationPolicyOption PlayReadyPolicy =
                 _context.ContentKeyAuthorizationPolicyOptions.Create("",
@@ -205,7 +205,7 @@ namespace DynamicEncryptionWithDRM
             IContentKeyAuthorizationPolicyOption WidevinePolicy =
                 _context.ContentKeyAuthorizationPolicyOptions.Create("", 
                     ContentKeyDeliveryType.Widevine, 
-                    restrictions, WidevyLicenseTemplate);
+                    restrictions, WidevineLicenseTemplate);
 
             IContentKeyAuthorizationPolicy contentKeyAuthorizationPolicy = _context.
                         ContentKeyAuthorizationPolicies.
@@ -237,7 +237,7 @@ namespace DynamicEncryptionWithDRM
             // Configure PlayReady and Widevine license templates.
             string PlayReadyLicenseTemplate = ConfigurePlayReadyLicenseTemplate();
 
-            string WidevyLicenseTemplate = ConfigureWidevineLicenseTemplate();
+            string WidevineLicenseTemplate = ConfigureWidevineLicenseTemplate();
 
             IContentKeyAuthorizationPolicyOption PlayReadyPolicy =
                 _context.ContentKeyAuthorizationPolicyOptions.Create("Token option",
@@ -247,7 +247,7 @@ namespace DynamicEncryptionWithDRM
             IContentKeyAuthorizationPolicyOption WidevinePolicy =
                 _context.ContentKeyAuthorizationPolicyOptions.Create("Token option",
                     ContentKeyDeliveryType.Widevine,
-                        restrictions, WidevyLicenseTemplate);
+                        restrictions, WidevineLicenseTemplate);
 
             IContentKeyAuthorizationPolicy contentKeyAuthorizationPolicy = _context.
                         ContentKeyAuthorizationPolicies.
