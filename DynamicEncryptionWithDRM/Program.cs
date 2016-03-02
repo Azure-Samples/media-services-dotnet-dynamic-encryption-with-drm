@@ -358,7 +358,7 @@ namespace DynamicEncryptionWithDRM
                 new Dictionary<AssetDeliveryPolicyConfigurationKey, string>
                 {
                     {AssetDeliveryPolicyConfigurationKey.PlayReadyLicenseAcquisitionUrl, acquisitionUrl.ToString()},
-                    {AssetDeliveryPolicyConfigurationKey.WidevineLicenseAcquisitionUrl, widevineURl.ToString()},
+                    {AssetDeliveryPolicyConfigurationKey.WidevineBaseLicenseAcquisitionUrl, widevineURl.ToString()},
 
                 };
 
