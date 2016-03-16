@@ -353,12 +353,17 @@ namespace DynamicEncryptionWithDRM
         static public void CreateAssetDeliveryPolicy(IAsset asset, IContentKey key)
         {
             Uri acquisitionUrl = key.GetKeyDeliveryUrl(ContentKeyDeliveryType.PlayReadyLicense);
-            Uri widevineURl = key.GetKeyDeliveryUrl(ContentKeyDeliveryType.Widevine);
+
+            Uri widevineUrl = key.GetKeyDeliveryUrl(ContentKeyDeliveryType.Widevine);
+            UriBuilder uriBuilder = new UriBuilder(widevineUrl);
+            uriBuilder.Query = String.Empty;
+            widevineUrl = uriBuilder.Uri;
+
             Dictionary<AssetDeliveryPolicyConfigurationKey, string> assetDeliveryPolicyConfiguration =
                 new Dictionary<AssetDeliveryPolicyConfigurationKey, string>
                 {
                     {AssetDeliveryPolicyConfigurationKey.PlayReadyLicenseAcquisitionUrl, acquisitionUrl.ToString()},
-                    {AssetDeliveryPolicyConfigurationKey.WidevineBaseLicenseAcquisitionUrl, widevineURl.ToString()},
+                    {AssetDeliveryPolicyConfigurationKey.WidevineBaseLicenseAcquisitionUrl, widevineUrl.ToString()}
 
                 };
 
@@ -373,7 +378,6 @@ namespace DynamicEncryptionWithDRM
             asset.DeliveryPolicies.Add(assetDeliveryPolicy);
 
         }
-
 
         /// <summary>
         /// Gets the streaming origin locator.
