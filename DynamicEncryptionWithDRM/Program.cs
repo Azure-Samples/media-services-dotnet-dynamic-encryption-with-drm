@@ -352,8 +352,10 @@ namespace DynamicEncryptionWithDRM
 
         static public void CreateAssetDeliveryPolicy(IAsset asset, IContentKey key)
         {
+            // Get the PlayReady license service URL.
             Uri acquisitionUrl = key.GetKeyDeliveryUrl(ContentKeyDeliveryType.PlayReadyLicense);
-
+            
+            // Build the Widevine license service URL.
             Uri widevineUrl = key.GetKeyDeliveryUrl(ContentKeyDeliveryType.Widevine);
             UriBuilder uriBuilder = new UriBuilder(widevineUrl);
             uriBuilder.Query = String.Empty;
