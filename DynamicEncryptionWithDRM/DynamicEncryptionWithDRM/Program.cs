@@ -132,18 +132,17 @@ namespace DynamicEncryptionWithDRM
 
         static public IAsset EncodeToAdaptiveBitrateMP4Set(IAsset inputAsset)
         {
-            var encodingPreset = "H264 Adaptive Bitrate MP4 Set 720p";
+            var encodingPreset = "H264 Multiple Bitrate 720p";
 
             IJob job = _context.Jobs.Create(String.Format("Encoding into Mp4 {0} to {1}",
                                     inputAsset.Name,
                                     encodingPreset));
 
             var mediaProcessors =
-                _context.MediaProcessors.Where(p => p.Name.Contains("Media Encoder")).ToList();
+                _context.MediaProcessors.Where(p => p.Name.Contains("Media Encoder Standard")).ToList();
 
             var latestMediaProcessor =
                 mediaProcessors.OrderBy(mp => new Version(mp.Version)).LastOrDefault();
-
 
 
             ITask encodeTask = job.Tasks.AddNew("Encoding", latestMediaProcessor, encodingPreset, TaskOptions.None);
