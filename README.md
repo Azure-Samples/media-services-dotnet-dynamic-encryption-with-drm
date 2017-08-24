@@ -22,22 +22,23 @@ This sample demonstrates functionality that was introduced in Azure Media Servic
 	
 	PM> Install-Package windowsazure.mediaservices -Version 3.5.2
 
-### Step 1:  Clone or download this repository.
+### Step 1:  Clone or download this repository
 
 ### Step 2: Update the app.config file
 
-Update the appSettings section of the app.config file with values of your Azure Media Services account.
+Update the appSettings section of the app.config file with appropriate values. For more information, see [this](https://docs.microsoft.com/azure/media-services/media-services-use-aad-auth-to-access-ams-api) topic.
 
-		  <appSettings>
-		    <add key="MediaServicesAccountName" value="MediaServicesAccountName" />
-		    <add key="MediaServicesAccountKey" value="MediaServicesAccountKey" />
-		    <add key="Issuer" value="http://testacs.com" />
-		    <add key="Audience" value="urn:test" />
-		  </appSettings>
+	<appSettings>
+		<add key="AMSAADTenantDomain" value="AADTenantDomain" />
+		<add key="AMSRESTAPIEndpoint" value="RESTAPIEndpoint" />
+
+		<add key="Issuer" value="http://testacs.com" />
+		<add key="Audience" value="urn:test" />
+	</appSettings>
 		  
-### Step 3: Get at least one streaming unit
+### Step 3: Start a streaming endpoint
 
-Get at least one streaming unit for the streaming endpoint from which you plan to delivery your content. For more information, see: [configure streaming endpoints](http://azure.microsoft.com/documentation/articles/media-services-dotnet-get-started/#configure-streaming-endpoint-using-the-portal)
+Make sure to start the streaming endpoint. For more information, see: [streaming endpoints](https://docs.microsoft.com/azure/media-services/media-services-portal-manage-streaming-endpoints).
 
 ### Step 4:  Run the sample
 
