@@ -19,6 +19,10 @@ namespace DynamicEncryptionWithDRM
             ConfigurationManager.AppSettings["AMSAADTenantDomain"];
         static string _RESTAPIEndpoint =
             ConfigurationManager.AppSettings["AMSRESTAPIEndpoint"];
+        static string _AMSClientId =
+            ConfigurationManager.AppSettings["AMSClientId"];
+        static string _AMSClientSecret =
+            ConfigurationManager.AppSettings["AMSClientSecret"];
 
         private static readonly Uri _sampleIssuer =
             new Uri(ConfigurationManager.AppSettings["Issuer"]);
@@ -36,8 +40,12 @@ namespace DynamicEncryptionWithDRM
 
         static void Main(string[] args)
         {
-            AzureAdTokenCredentials tokenCredentials = new AzureAdTokenCredentials(_AADTenantDomain, AzureEnvironments.AzureCloudEnvironment);
-            AzureAdTokenProvider tokenProvider = new AzureAdTokenProvider(tokenCredentials);
+            AzureAdTokenCredentials tokenCredentials =
+                new AzureAdTokenCredentials(_AADTenantDomain,
+                    new AzureAdClientSymmetricKey(_AMSClientId, _AMSClientSecret),
+                    AzureEnvironments.AzureCloudEnvironment);
+
+            var tokenProvider = new AzureAdTokenProvider(tokenCredentials);
 
             _context = new CloudMediaContext(new Uri(_RESTAPIEndpoint), tokenProvider);
 

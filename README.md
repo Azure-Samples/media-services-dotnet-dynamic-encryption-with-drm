@@ -14,8 +14,7 @@ For detailed information about the sample, see [Using PlayReady and/or Widevine 
 
 To run this sample you will need:
 
-- Visual Studio 2013 or 2015
-- An Internet connection
+- Visual Studio 
 - An Azure subscription
 
 This sample demonstrates functionality that was introduced in Azure Media Services SDK for .Net -Version 3.5.2 (specifically, the ability to define a Widevine license template and request a Widevine license from Azure Media Services).  The following Nuget package command was used to install the package:
@@ -29,8 +28,10 @@ This sample demonstrates functionality that was introduced in Azure Media Servic
 Update the appSettings section of the app.config file with appropriate values. For more information, see [this](https://docs.microsoft.com/azure/media-services/media-services-use-aad-auth-to-access-ams-api) topic.
 
 	<appSettings>
-		<add key="AMSAADTenantDomain" value="AADTenantDomain" />
-		<add key="AMSRESTAPIEndpoint" value="RESTAPIEndpoint" />
+		<add key="AMSAADTenantDomain" value="tenant"/>
+		<add key="AMSRESTAPIEndpoint" value="endpoint"/>
+		<add key="AMSClientId" value="id"/>
+		<add key="AMSClientSecret" value="secret"/>
 
 		<add key="Issuer" value="http://testacs.com" />
 		<add key="Audience" value="urn:test" />
