@@ -1,7 +1,11 @@
 ---
-services: media-services
-platforms: dotnet
-author: Juliako
+page_type: sample
+languages:
+- csharp
+products:
+- azure
+description: "The sample shows how to use Azure Media Services to dynamically encrypt your content with PlayReady and Widevine DRMs."
+urlFragment: media-services-dotnet-dynamic-encryption-with-drm
 ---
 
 # Using PlayReady and/or Widevine Dynamic Common Encryption with .NET
