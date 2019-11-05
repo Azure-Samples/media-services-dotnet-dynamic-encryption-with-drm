@@ -10,7 +10,13 @@ urlFragment: media-services-dotnet-dynamic-encryption-with-drm
 
 # Using PlayReady and/or Widevine Dynamic Common Encryption with Media Services v2 .NET
 
-The sample shows how to use Azure Media Services to dynamically encrypt your content with PlayReady and Widevine DRMs. 
+## NOTE
+ 
+You can find the latest and most extensive Media Services v3 .NET samples in the [Azure Media Services v3](https://github.com/Azure-Samples/media-services-v3-dotnet) repository.
+
+## Overview
+
+The sample in this repo shows how to use Azure Media Services v2 to dynamically encrypt your content with PlayReady and Widevine DRMs. 
 
 For detailed information about the sample, see [Using PlayReady and/or Widevine Dynamic Common Encryption with .NET](http://azure.microsoft.com/documentation/articles/media-services-protect-with-drm/)
 
